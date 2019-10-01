@@ -1,10 +1,10 @@
 import L from 'leaflet';
+import PropTypes from 'prop-types';
 import { withLeaflet } from 'react-leaflet';
 import useVesselTracks from '../hooks/useVesselTracks';
 import { customMarker } from '../constants/customMarker';
 
 const VesselTracks = ({ leaflet: { map } }) => {
-    console.log(map);
     const [vesselTracks] = useVesselTracks();
     console.log(vesselTracks);
 
@@ -15,6 +15,13 @@ const VesselTracks = ({ leaflet: { map } }) => {
     });
 
     return null;
+};
+
+VesselTracks.propTypes = {
+    leaflet: PropTypes.shape({
+        map: PropTypes.object,
+        layerContainer: PropTypes.object
+    }).isRequired
 };
 
 export default withLeaflet(VesselTracks);
