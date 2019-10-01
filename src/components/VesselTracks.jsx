@@ -3,6 +3,7 @@ import ReactDOMServer from 'react-dom/server';
 import L from 'leaflet';
 import PropTypes from 'prop-types';
 import { withLeaflet } from 'react-leaflet';
+import Spinner from './Spinner';
 import useVesselTracks from '../hooks/useVesselTracks';
 import { customMarker } from '../constants/customMarker';
 import PopupContent from './PopupContent';
@@ -10,7 +11,7 @@ import PopupContent from './PopupContent';
 const fg = L.featureGroup();
 
 const VesselTracks = ({ leaflet: { map } }) => {
-    const [vesselTracks] = useVesselTracks();
+    const [vesselTracks, loading] = useVesselTracks();
     // console.log(vesselTracks);
 
     vesselTracks.forEach((vesselTrack, id) => {
@@ -30,6 +31,8 @@ const VesselTracks = ({ leaflet: { map } }) => {
             map.fitBounds(fg.getBounds());
         }
     });
+
+    if (loading) return <Spinner />;
 
     return null;
 };
