@@ -11,15 +11,15 @@ const VesselTracks = ({ leaflet: { map } }) => {
     const [vesselTracks] = useVesselTracks();
     console.log(vesselTracks);
 
-    vesselTracks.forEach(track => {
-        const lat = parseFloat(track.LAT);
-        const lon = parseFloat(track.LON);
+    vesselTracks.forEach(vesselTrack => {
+        const lat = parseFloat(vesselTrack.LAT);
+        const lon = parseFloat(vesselTrack.LON);
 
         L.marker([lat, lon], { icon: customMarker })
             .addTo(map)
             .bindPopup(
                 ReactDOMServer.renderToString(
-                    <PopupContent vesselTrack={track} />
+                    <PopupContent vesselTrack={vesselTrack} />
                 )
             );
     });
