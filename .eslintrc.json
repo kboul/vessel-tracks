@@ -16,5 +16,9 @@
         "sourceType": "module"
     },
     "plugins": ["react", "prettier"],
-    "rules": {}
+    "rules": {
+        "import/prefer-default-export": "off",
+        "no-console": "off",
+        "consistent-return": "off"
+    }
 }
