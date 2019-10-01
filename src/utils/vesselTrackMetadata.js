@@ -16,8 +16,8 @@ export const vesselTrackMetadata = ({
         { name: 'LON', value: LON },
         { name: 'MMSI', value: MMSI },
         { name: 'SHIP_ID', value: SHIP_ID },
-        { name: 'SPEED', value: SPEED },
+        { name: 'SPEED (knots x10)', value: SPEED },
         { name: 'STATUS', value: STATUS },
-        { name: 'TIME', value: TIMESTAMP }
+        { name: 'TIME (UTC)', value: TIMESTAMP }
     ];
 };
