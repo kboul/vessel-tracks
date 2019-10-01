@@ -19,6 +19,9 @@
     "rules": {
         "import/prefer-default-export": "off",
         "no-console": "off",
-        "consistent-return": "off"
+        "consistent-return": "off",
+        "react/jsx-filename-extension": "off",
+        "react/jsx-indent": "off",
+        "react/jsx-indent-props": "off"
     }
 }
