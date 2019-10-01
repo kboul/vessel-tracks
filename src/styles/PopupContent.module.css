@@ -1,25 +1,25 @@
-table {
+.table {
     font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
     border: 1px solid #eee;
 }
 
-th,
-td {
+.th,
+.td {
     text-align: left;
     font-size: 11px;
 }
 
-td {
+.td {
     padding-left: 10px;
 }
 
-th {
+.th {
     white-space: nowrap;
     padding: 5px 10px;
 }
 
-table tr:nth-child(even) {
+.table .tr:nth-child(even) {
     background-color: #f7f7f7;
 }
