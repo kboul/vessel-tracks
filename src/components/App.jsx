@@ -1,7 +1,8 @@
 import React from 'react';
+import Leaflet from './Leaflet';
 
-function App() {
-    return <div>Hello World</div>;
-}
+const App = () => {
+    return <Leaflet />;
+};
 
 export default App;
