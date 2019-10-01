@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { vesselTrackMetadata } from '../utils/vesselTrackMetadata';
+import { idGenerator } from '../utils/idGenerator';
 import '../styles/PopupContent.css';
 
 const PopupContent = ({ vesselTrack }) => {
     return (
         <table>
-            {vesselTrackMetadata(vesselTrack).map(({ name, value }, id) => {
+            {vesselTrackMetadata(vesselTrack).map(({ name, value }) => {
                 return (
-                    <tr key={id}>
+                    <tr key={idGenerator()}>
                         <th>{name}:</th>
                         <td>{value}</td>
                     </tr>
