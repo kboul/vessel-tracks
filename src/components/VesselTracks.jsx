@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import ReactDOMServer from 'react-dom/server';
 import L from 'leaflet';
-import 'leaflet.markercluster/dist/MarkerCluster.css';
-import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import 'leaflet.markercluster/dist/leaflet.markercluster';
 import PropTypes from 'prop-types';
 import { withLeaflet } from 'react-leaflet';
@@ -11,7 +9,6 @@ import Spinner from './Spinner';
 import useVesselTracks from '../hooks/useVesselTracks';
 import { customMarker } from '../constants/customMarker';
 
-const fg = L.featureGroup();
 const mcg = L.markerClusterGroup();
 
 const VesselTracks = ({ leaflet: { map } }) => {
@@ -25,7 +22,6 @@ const VesselTracks = ({ leaflet: { map } }) => {
             L.marker(new L.LatLng(lat, lon), {
                 icon: customMarker
             })
-                .addTo(fg)
                 .addTo(mcg)
                 .bindPopup(
                     ReactDOMServer.renderToString(
@@ -35,15 +31,13 @@ const VesselTracks = ({ leaflet: { map } }) => {
 
             if (vesselTracks.length - 1 === id) {
                 console.log(vesselTracks);
-                // add feature group to the map
-                fg.addTo(map);
-                // fit the map bounds to the markers relative coords
-                map.fitBounds(fg.getBounds());
+                // fit the map bounds to the mcg relative coords
+                map.fitBounds(mcg.getBounds());
                 // add the marker cluster group to the map
                 map.addLayer(mcg);
             }
         });
-    }, [vesselTracks]);
+    }, [vesselTracks, map]);
 
     if (loading) return <Spinner />;
 
