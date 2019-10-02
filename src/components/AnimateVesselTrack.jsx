@@ -11,8 +11,9 @@ let line;
 let animatedMarker;
 
 const AnimateVesselTrack = ({ leaflet: { map }, latlngs }) => {
-    const stopAndRemove = () => {
+    const stopAnimAndRemovePath = () => {
         if (animatedMarker) {
+            console.log('ending animation...');
             animatedMarker.stop();
             map.removeLayer(animatedMarker);
             line.removeFrom(map);
@@ -29,7 +30,7 @@ const AnimateVesselTrack = ({ leaflet: { map }, latlngs }) => {
             icon: customMarker,
             distance: 500,
             interval: 2000,
-            onEnd: () => stopAndRemove()
+            onEnd: () => stopAnimAndRemovePath()
         });
 
         map.addLayer(animatedMarker);
@@ -39,7 +40,7 @@ const AnimateVesselTrack = ({ leaflet: { map }, latlngs }) => {
         });
     };
 
-    const stopAnimation = () => stopAndRemove();
+    const stopAnimation = () => stopAnimAndRemovePath();
 
     return (
         <>
