@@ -4,17 +4,26 @@ import { getVesselTracksService } from '../services/getVesselTracksService';
 const useVesselTracks = () => {
     const [vesselTracks, setVesselTracks] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [isError, setIsError] = useState(false);
 
     useEffect(() => {
         setLoading(true);
-        (async () => {
-            const getVesselTracks = await getVesselTracksService();
-            setVesselTracks(getVesselTracks);
+        setIsError(false);
+
+        const fetchVesselTracks = async () => {
+            try {
+                const getVesselTracks = await getVesselTracksService();
+                setVesselTracks(getVesselTracks);
+            } catch (error) {
+                setIsError(true);
+            }
             setLoading(false);
-        })();
+        };
+
+        fetchVesselTracks();
     }, []);
 
-    return [vesselTracks, loading];
+    return [vesselTracks, loading, isError];
 };
 
 export default useVesselTracks;
