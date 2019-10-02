@@ -8,14 +8,14 @@ import { withLeaflet } from 'react-leaflet';
 import PopupContent from './PopupContent';
 import Spinner from './Spinner';
 import AnimateVesselTrack from './AnimateVesselTrack';
-import useVesselTracks from '../hooks/useVesselTracks';
+import useVesselTracksFetcher from '../hooks/useVesselTracksFetcher';
 import { customMarker } from '../constants/customMarker';
 
 const mcg = L.markerClusterGroup();
 const latlngs = [];
 
 const VesselTracks = ({ leaflet: { map } }) => {
-    const [vesselTracks, loading] = useVesselTracks();
+    const [vesselTracks, loading] = useVesselTracksFetcher();
 
     useEffect(() => {
         console.log(vesselTracks);

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getVesselTracksService } from '../services/getVesselTracksService';
 
-const useVesselTracks = () => {
+const useVesselTracksFetcher = () => {
     const [vesselTracks, setVesselTracks] = useState([]);
     const [loading, setLoading] = useState(false);
     const [isError, setIsError] = useState(false);
@@ -26,4 +26,4 @@ const useVesselTracks = () => {
     return [vesselTracks, loading, isError];
 };
 
-export default useVesselTracks;
+export default useVesselTracksFetcher;
