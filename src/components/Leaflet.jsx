@@ -10,10 +10,6 @@ const mapStyle = { height: '100vh' };
 const Leaflet = () => {
     return (
         <Map center={position} zoom={3} style={mapStyle} maxZoom={20}>
-            <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            />
             <LayersControl position="topright">
                 {tilelayers.map(({ name, attribution, url, checked }) => (
                     <LayersControl.BaseLayer
