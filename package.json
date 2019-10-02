@@ -5,12 +5,14 @@
     "dependencies": {
         "axios": "^0.19.0",
         "leaflet": "^1.5.1",
+        "leaflet.animatedmarker": "^1.0.0",
         "leaflet.markercluster": "^1.4.1",
         "node-sass": "^4.12.0",
         "prop-types": "^15.7.2",
         "react": "^16.10.1",
         "react-dom": "^16.10.1",
         "react-leaflet": "^2.4.0",
+        "react-leaflet-control": "^2.1.1",
         "react-scripts": "3.1.2"
     },
     "scripts": {
