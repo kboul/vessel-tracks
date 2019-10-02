@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { vesselTrackMetadata } from '../utils/vesselTrackMetadata';
 import { idGenerator } from '../utils/idGenerator';
-import styles from '../styles/PopupContent.module.css';
+import styles from '../styles/PopupContent.module.sass';
 
 const PopupContent = ({ vesselTrack }) => {
     return (
