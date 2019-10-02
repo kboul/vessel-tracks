@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/react-daily-vessel-tracks/precache-manifest.7f2544c0fac74a9a9dcc25c4a60ecaf5.js"
+  "/react-daily-vessel-tracks/precache-manifest.abea46f530089327282236cabd458d88.js"
 );
 
 self.addEventListener('message', (event) => {
