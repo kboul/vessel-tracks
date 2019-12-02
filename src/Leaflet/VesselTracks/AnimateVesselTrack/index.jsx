@@ -2,15 +2,17 @@ import React from 'react';
 import 'leaflet.animatedmarker/src/AnimatedMarker';
 import L from 'leaflet';
 import PropTypes from 'prop-types';
-import { withLeaflet } from 'react-leaflet';
+import { useLeaflet } from 'react-leaflet';
 import Control from 'react-leaflet-control';
-import { customMarker } from '../constants/customMarker';
-import styles from '../styles/AnimateVesselTrack.module.sass';
+import { customMarker } from '../../constants';
+import styles from './index.module.sass';
 
 let line;
 let animatedMarker;
 
-const AnimateVesselTrack = ({ leaflet: { map }, latlngs }) => {
+const AnimateVesselTrack = ({ latlngs }) => {
+    const { map } = useLeaflet();
+
     const stopAnimAndRemovePath = () => {
         if (animatedMarker) {
             console.log('ending animation...');
@@ -65,11 +67,7 @@ const AnimateVesselTrack = ({ leaflet: { map }, latlngs }) => {
 };
 
 AnimateVesselTrack.propTypes = {
-    leaflet: PropTypes.shape({
-        map: PropTypes.object,
-        layerContainer: PropTypes.object
-    }).isRequired,
     latlngs: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired
 };
 
-export default withLeaflet(AnimateVesselTrack);
+export default AnimateVesselTrack;

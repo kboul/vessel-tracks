@@ -1,8 +1,8 @@
 import React from 'react';
 import { Map, TileLayer, LayersControl } from 'react-leaflet';
 import VesselTracks from './VesselTracks';
-import tilelayers from '../constants/tilelayers';
-import { idGenerator } from '../utils/idGenerator';
+import { tilelayers } from './constants';
+import { idGenerator } from './utils';
 
 const position = [51.505, -0.09];
 const mapStyle = { height: '100vh' };

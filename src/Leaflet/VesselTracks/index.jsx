@@ -3,23 +3,21 @@ import ReactDOMServer from 'react-dom/server';
 import L from 'leaflet';
 import 'leaflet.markercluster/dist/leaflet.markercluster';
 import 'leaflet.animatedmarker/src/AnimatedMarker';
-import PropTypes from 'prop-types';
-import { withLeaflet } from 'react-leaflet';
+import { useLeaflet } from 'react-leaflet';
 import PopupContent from './PopupContent';
-import Spinner from './Spinner';
+import Spinner from '../../Spinner';
 import AnimateVesselTrack from './AnimateVesselTrack';
-import useVesselTracksFetcher from '../hooks/useVesselTracksFetcher';
-import { customMarker } from '../constants/customMarker';
+import useVesselTracksFetcher from './hooks';
+import { customMarker } from '../constants';
 
 const mcg = L.markerClusterGroup();
 const latlngs = [];
 
-const VesselTracks = ({ leaflet: { map } }) => {
+const VesselTracks = () => {
+    const { map } = useLeaflet();
     const [vesselTracks, loading] = useVesselTracksFetcher();
 
     useEffect(() => {
-        console.log(vesselTracks);
-
         vesselTracks.forEach(vesselTrack => {
             const lat = parseFloat(vesselTrack.LAT);
             const lon = parseFloat(vesselTrack.LON);
@@ -48,11 +46,4 @@ const VesselTracks = ({ leaflet: { map } }) => {
     return <AnimateVesselTrack latlngs={latlngs} />;
 };
 
-VesselTracks.propTypes = {
-    leaflet: PropTypes.shape({
-        map: PropTypes.object,
-        layerContainer: PropTypes.object
-    }).isRequired
-};
-
-export default withLeaflet(VesselTracks);
+export default VesselTracks;

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getVesselTracksService } from '../services/getVesselTracksService';
+import { getVesselTracksService } from './services';
 
 const useVesselTracksFetcher = () => {
     const [vesselTracks, setVesselTracks] = useState([]);

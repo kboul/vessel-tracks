@@ -1,6 +1,6 @@
 import React from 'react';
-import loader from '../assets/loader.gif';
-import styles from '../styles/Spinner.module.sass';
+import loader from './loader.gif';
+import styles from './index.module.sass';
 
 const Spinner = () => {
     return (
