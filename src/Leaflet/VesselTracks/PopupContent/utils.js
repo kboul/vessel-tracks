@@ -1,3 +1,9 @@
+/**
+ *
+ * @param {Object}
+ * @returns {Array<Object>}
+ */
+
 export const vesselTrackMetadata = ({
     COURSE,
     HEADING,
