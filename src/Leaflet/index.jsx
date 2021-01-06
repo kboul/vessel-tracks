@@ -1,5 +1,6 @@
 import React from 'react';
 import { Map, TileLayer, LayersControl } from 'react-leaflet';
+
 import VesselTracks from './VesselTracks';
 import { tilelayers } from './constants';
 import { idGenerator } from './utils';

@@ -12,8 +12,8 @@ const useVesselTracksFetcher = () => {
 
         const fetchVesselTracks = async () => {
             try {
-                const getVesselTracks = await getVesselTracksService();
-                setVesselTracks(getVesselTracks);
+                const data = await getVesselTracksService();
+                setVesselTracks(data);
             } catch (error) {
                 setIsError(true);
             }

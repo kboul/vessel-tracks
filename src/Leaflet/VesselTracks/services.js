@@ -1,4 +1,5 @@
 import httpService from '../../httpService';
+import mockData from './mock/data.json';
 
 export const getVesselTracksService = async () => {
     try {
@@ -8,6 +9,6 @@ export const getVesselTracksService = async () => {
         const { data } = response;
         return data;
     } catch (error) {
-        console.log('There was an error while getting the earthquakes', error);
+        return mockData;
     }
 };
