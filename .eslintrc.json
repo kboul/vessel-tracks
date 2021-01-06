@@ -24,7 +24,8 @@
         "react/jsx-indent": "off",
         "react/jsx-indent-props": "off",
         "react/jsx-one-expression-per-line": "off",
-        "react/jsx-closing-bracket-location": "off"
+        "react/jsx-closing-bracket-location": "off",
+        "arrow-body-style": "off"
     },
     "overrides": [
         {
