@@ -1,17 +1,23 @@
 {
   "files": {
-    "main.css": "/react-daily-vessel-tracks/static/css/main.4bd06e1a.chunk.css",
-    "main.js": "/react-daily-vessel-tracks/static/js/main.7dd29d39.chunk.js",
-    "main.js.map": "/react-daily-vessel-tracks/static/js/main.7dd29d39.chunk.js.map",
-    "runtime-main.js": "/react-daily-vessel-tracks/static/js/runtime-main.63aa378b.js",
-    "runtime-main.js.map": "/react-daily-vessel-tracks/static/js/runtime-main.63aa378b.js.map",
-    "static/css/2.05e2f46e.chunk.css": "/react-daily-vessel-tracks/static/css/2.05e2f46e.chunk.css",
-    "static/js/2.5003b67a.chunk.js": "/react-daily-vessel-tracks/static/js/2.5003b67a.chunk.js",
-    "static/js/2.5003b67a.chunk.js.map": "/react-daily-vessel-tracks/static/js/2.5003b67a.chunk.js.map",
+    "main.css": "/react-daily-vessel-tracks/static/css/main.38368b68.chunk.css",
+    "main.js": "/react-daily-vessel-tracks/static/js/main.da009c0f.chunk.js",
+    "main.js.map": "/react-daily-vessel-tracks/static/js/main.da009c0f.chunk.js.map",
+    "runtime-main.js": "/react-daily-vessel-tracks/static/js/runtime-main.ed586fef.js",
+    "runtime-main.js.map": "/react-daily-vessel-tracks/static/js/runtime-main.ed586fef.js.map",
+    "static/css/2.595b2d39.chunk.css": "/react-daily-vessel-tracks/static/css/2.595b2d39.chunk.css",
+    "static/js/2.5bd9ccd1.chunk.js": "/react-daily-vessel-tracks/static/js/2.5bd9ccd1.chunk.js",
+    "static/js/2.5bd9ccd1.chunk.js.map": "/react-daily-vessel-tracks/static/js/2.5bd9ccd1.chunk.js.map",
     "index.html": "/react-daily-vessel-tracks/index.html",
-    "precache-manifest.abea46f530089327282236cabd458d88.js": "/react-daily-vessel-tracks/precache-manifest.abea46f530089327282236cabd458d88.js",
-    "service-worker.js": "/react-daily-vessel-tracks/service-worker.js",
-    "static/css/2.05e2f46e.chunk.css.map": "/react-daily-vessel-tracks/static/css/2.05e2f46e.chunk.css.map",
-    "static/css/main.4bd06e1a.chunk.css.map": "/react-daily-vessel-tracks/static/css/main.4bd06e1a.chunk.css.map"
-  }
+    "static/css/2.595b2d39.chunk.css.map": "/react-daily-vessel-tracks/static/css/2.595b2d39.chunk.css.map",
+    "static/css/main.38368b68.chunk.css.map": "/react-daily-vessel-tracks/static/css/main.38368b68.chunk.css.map",
+    "static/js/2.5bd9ccd1.chunk.js.LICENSE.txt": "/react-daily-vessel-tracks/static/js/2.5bd9ccd1.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ed586fef.js",
+    "static/css/2.595b2d39.chunk.css",
+    "static/js/2.5bd9ccd1.chunk.js",
+    "static/css/main.38368b68.chunk.css",
+    "static/js/main.da009c0f.chunk.js"
+  ]
 }
