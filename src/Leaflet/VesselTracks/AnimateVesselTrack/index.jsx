@@ -4,6 +4,7 @@ import L from 'leaflet';
 import PropTypes from 'prop-types';
 import { useLeaflet } from 'react-leaflet';
 import Control from 'react-leaflet-control';
+
 import { customMarker } from '../../constants';
 import styles from './index.module.sass';
 

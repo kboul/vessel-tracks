@@ -4,6 +4,7 @@ import L from 'leaflet';
 import 'leaflet.markercluster/dist/leaflet.markercluster';
 import 'leaflet.animatedmarker/src/AnimatedMarker';
 import { useLeaflet } from 'react-leaflet';
+
 import PopupContent from './PopupContent';
 import Spinner from '../../Spinner';
 import AnimateVesselTrack from './AnimateVesselTrack';
