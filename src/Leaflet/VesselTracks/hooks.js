@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { getVesselTracksService } from './services';
+
+import { getVesselTracksService } from './api';
+import mockData from './mock/data.json';
 
 const useVesselTracksFetcher = () => {
     const [vesselTracks, setVesselTracks] = useState([]);
@@ -13,9 +15,10 @@ const useVesselTracksFetcher = () => {
         const fetchVesselTracks = async () => {
             try {
                 const data = await getVesselTracksService();
-                setVesselTracks(data);
+                if (data.length > 0) setVesselTracks(data);
             } catch (error) {
                 setIsError(true);
+                setVesselTracks(mockData);
             }
             setLoading(false);
         };
