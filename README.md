@@ -11,11 +11,11 @@ select master branch
 Navigate to the root folder:
 
 ```
-npm install
+yarn install
 ```
 
 ```
-npm start
+yarn start
 ```
 
 browser listens to [http://localhost:3000](http://localhost:3000) as default port
