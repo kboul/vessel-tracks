@@ -1,5 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 
 import "./index.sass";
 import "leaflet/dist/leaflet.css";
@@ -8,4 +7,6 @@ import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 
 import App from "./App";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(<App />);
