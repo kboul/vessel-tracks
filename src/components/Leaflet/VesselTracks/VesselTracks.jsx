@@ -3,7 +3,7 @@ import ReactDOMServer from "react-dom/server";
 import L from "leaflet";
 import "leaflet.markercluster/dist/leaflet.markercluster";
 import "leaflet.animatedmarker/src/AnimatedMarker";
-import { useLeaflet } from "react-leaflet";
+import { useMap } from "react-leaflet";
 import { useQuery } from "@tanstack/react-query";
 
 import AnimateVesselTrack from "./AnimateVesselTrack";
@@ -16,7 +16,8 @@ const mcg = L.markerClusterGroup();
 const latlngs = [];
 
 export default function VesselTracks() {
-  const { map } = useLeaflet();
+  const map = useMap();
+
   const { data: vesselTracks, isLoading } = useQuery(
     ["vesselTracks"],
     getVesselTracksService
