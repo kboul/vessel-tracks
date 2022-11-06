@@ -4,11 +4,12 @@ import L from "leaflet";
 import "leaflet.markercluster/dist/leaflet.markercluster";
 import "leaflet.animatedmarker/src/AnimatedMarker";
 import { useLeaflet } from "react-leaflet";
+import { useQuery } from "@tanstack/react-query";
 
 import AnimateVesselTrack from "./AnimateVesselTrack";
 import PopupContent from "./PopupContent";
 import Spinner from "../../Spinner";
-import useVesselTracksFetcher from "./hooks";
+import { getVesselTracksService } from "./api";
 import { customMarker } from "../constants";
 
 const mcg = L.markerClusterGroup();
@@ -16,9 +17,14 @@ const latlngs = [];
 
 export default function VesselTracks() {
   const { map } = useLeaflet();
-  const [vesselTracks, loading] = useVesselTracksFetcher();
+  const { data: vesselTracks, isLoading } = useQuery(
+    ["vesselTracks"],
+    getVesselTracksService
+  );
 
   useEffect(() => {
+    if (!map || !vesselTracks) return;
+
     vesselTracks.forEach((vesselTrack) => {
       const lat = parseFloat(vesselTrack.LAT);
       const lon = parseFloat(vesselTrack.LON);
@@ -42,7 +48,7 @@ export default function VesselTracks() {
     });
   }, [vesselTracks, map]);
 
-  if (loading) return <Spinner />;
+  if (isLoading) return <Spinner />;
 
   return <AnimateVesselTrack latlngs={latlngs} />;
 }

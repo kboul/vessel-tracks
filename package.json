@@ -4,6 +4,7 @@
   "homepage": "https://kboul.github.io/vessel-tracks",
   "private": true,
   "dependencies": {
+    "@tanstack/react-query": "^4.14.5",
     "axios": "0.27.2",
     "gh-pages": "3.2.3",
     "leaflet": "1.8.0",
