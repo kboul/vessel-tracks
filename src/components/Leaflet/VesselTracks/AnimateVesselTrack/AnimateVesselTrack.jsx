@@ -1,8 +1,7 @@
 import "leaflet.animatedmarker/src/AnimatedMarker";
 import L from "leaflet";
 import PropTypes from "prop-types";
-import { useLeaflet } from "react-leaflet";
-import Control from "react-leaflet-control";
+import { useMap } from "react-leaflet";
 
 import { customMarker } from "../../constants";
 import styles from "./styles.module.sass";
@@ -11,10 +10,10 @@ let line;
 let animatedMarker;
 
 export default function AnimateVesselTrack({ latlngs }) {
-  const { map } = useLeaflet();
+  const map = useMap();
 
   const stopAnimAndRemovePath = () => {
-    if (animatedMarker) {
+    if (map && animatedMarker) {
       console.log("ending animation...");
       animatedMarker.stop();
       map.removeLayer(animatedMarker);
@@ -23,6 +22,8 @@ export default function AnimateVesselTrack({ latlngs }) {
   };
 
   const startAnimation = () => () => {
+    if (!map) return;
+
     line = L.polyline(latlngs, {
       color: "#02929b",
       weight: 1.5,
@@ -32,7 +33,7 @@ export default function AnimateVesselTrack({ latlngs }) {
       icon: customMarker,
       distance: 500,
       interval: 2000,
-      onEnd: () => stopAnimAndRemovePath(),
+      onEnd: stopAnimAndRemovePath,
     });
 
     map.addLayer(animatedMarker);
@@ -46,22 +47,18 @@ export default function AnimateVesselTrack({ latlngs }) {
 
   return (
     <>
-      <Control position="topleft">
-        <button
-          type="button"
-          className={styles.animateControl}
-          onClick={startAnimation()}>
-          Start animation
-        </button>
-      </Control>
-      <Control position="topleft">
-        <button
-          type="button"
-          className={styles.animateControl}
-          onClick={stopAnimation()}>
-          Stop animation
-        </button>
-      </Control>
+      <button
+        type="button"
+        className={styles.startAnimation}
+        onClick={startAnimation()}>
+        Start animation
+      </button>
+      <button
+        type="button"
+        className={styles.stopAnimation}
+        onClick={stopAnimation()}>
+        Stop animation
+      </button>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { Map, TileLayer, LayersControl } from "react-leaflet";
+import { MapContainer, TileLayer, LayersControl } from "react-leaflet";
 
 import VesselTracks from "./VesselTracks";
 import { tilelayers } from "./constants";
@@ -8,7 +8,7 @@ const mapStyle = { height: "100vh" };
 
 export default function Leaflet() {
   return (
-    <Map center={position} zoom={3} style={mapStyle} maxZoom={20}>
+    <MapContainer center={position} zoom={3} style={mapStyle} maxZoom={20}>
       <LayersControl position="topright">
         {tilelayers.map(({ id, name, attribution, url, checked }) => (
           <LayersControl.BaseLayer key={id} name={name} checked={checked}>
@@ -18,6 +18,6 @@ export default function Leaflet() {
       </LayersControl>
 
       <VesselTracks />
-    </Map>
+    </MapContainer>
   );
 }
