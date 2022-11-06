@@ -1,4 +1,4 @@
-import httpService from "../../httpService";
+import httpService from "../../../httpService";
 import mockData from "./mock/data.json";
 
 export const getVesselTracksService = async () => {
