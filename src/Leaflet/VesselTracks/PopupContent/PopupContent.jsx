@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 
 import { vesselTrackMetadata } from "./utils";
-import { idGenerator } from "../../utils";
 import styles from "./styles.module.sass";
 
 export default function PopupContent({ vesselTrack }) {
@@ -9,7 +8,7 @@ export default function PopupContent({ vesselTrack }) {
     <table className={styles.table}>
       {vesselTrackMetadata(vesselTrack).map(({ name, value }) => {
         return (
-          <tr key={idGenerator()} className={styles.tr}>
+          <tr key={vesselTrack.SHIP_ID} className={styles.tr}>
             <th className={styles.th}>{name}:</th>
             <td className={styles.td}>{value}</td>
           </tr>

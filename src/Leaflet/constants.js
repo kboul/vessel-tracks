@@ -9,6 +9,7 @@ export const customMarker = new L.Icon({
 
 export const tilelayers = [
   {
+    id: 1,
     name: "OpenStreetMap.BlackAndWhite",
     attribution:
       '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
@@ -16,6 +17,7 @@ export const tilelayers = [
     checked: false,
   },
   {
+    id: 2,
     name: "OpenStreetMap.Mapnik",
     attribution:
       '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
@@ -23,12 +25,14 @@ export const tilelayers = [
     checked: true,
   },
   {
+    id: 3,
     name: "GoogleStreets",
     attribution: "&copy; Google",
     url: "http://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
     checked: false,
   },
   {
+    id: 4,
     name: "GoogleSatellite",
     attribution: "&copy; Google",
     url: "http://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",
