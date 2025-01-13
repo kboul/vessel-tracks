@@ -11,11 +11,11 @@ select master branch
 Navigate to the root folder:
 
 ```
-yarn install
+pnpm install
 ```
 
 ```
-yarn start
+pnpm start
 ```
 
 browser listens to [http://localhost:3000](http://localhost:3000) as default port
