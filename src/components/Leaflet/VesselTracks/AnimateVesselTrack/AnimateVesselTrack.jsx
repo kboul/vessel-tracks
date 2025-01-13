@@ -49,13 +49,13 @@ export default function AnimateVesselTrack({ latlngs }) {
     <>
       <button
         type="button"
-        className={styles.startAnimation}
+        className={`${styles.startAnimation} ${styles.animateControl}`}
         onClick={startAnimation()}>
         Start animation
       </button>
       <button
         type="button"
-        className={styles.stopAnimation}
+        className={`${styles.stopAnimation} ${styles.animateControl}`}
         onClick={stopAnimation()}>
         Stop animation
       </button>

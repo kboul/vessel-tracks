@@ -9,7 +9,6 @@
     "leaflet": "1.8.0",
     "leaflet.animatedmarker": "1.0.0",
     "leaflet.markercluster": "1.5.3",
-    "node-sass": "7.0.1",
     "prop-types": "15.8.1",
     "react": "18.1.0",
     "react-dom": "18.1.0",
