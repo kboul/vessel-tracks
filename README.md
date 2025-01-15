@@ -18,4 +18,5 @@ pnpm install
 pnpm start
 ```
 
-browser listens to [http://localhost:3000](http://localhost:3000) as default port
+browser listens to [http://localhost:3003](http://localhost:3003) as default port
+. env file is included with the changed port
