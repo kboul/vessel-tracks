@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 import { vesselTrackMetadata } from "./utils";
-import styles from "./styles.module.sass";
+import styles from "./styles.module.css";
 
 export default function PopupContent({ vesselTrack }) {
   return (

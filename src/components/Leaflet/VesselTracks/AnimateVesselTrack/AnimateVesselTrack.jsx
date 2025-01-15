@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { useMap } from "react-leaflet";
 
 import { customMarker } from "../../constants";
-import styles from "./styles.module.sass";
+import styles from "./styles.module.css";
 
 let line;
 let animatedMarker;
