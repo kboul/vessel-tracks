@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { useMap } from "react-leaflet";
 
 import { customMarker } from "../../constants";
-import styles from "./styles.module.sass";
+import styles from "./styles.module.css";
 
 let line;
 let animatedMarker;
@@ -49,13 +49,13 @@ export default function AnimateVesselTrack({ latlngs }) {
     <>
       <button
         type="button"
-        className={styles.startAnimation}
+        className={`${styles.startAnimation} ${styles.animateControl}`}
         onClick={startAnimation()}>
         Start animation
       </button>
       <button
         type="button"
-        className={styles.stopAnimation}
+        className={`${styles.stopAnimation} ${styles.animateControl}`}
         onClick={stopAnimation()}>
         Stop animation
       </button>

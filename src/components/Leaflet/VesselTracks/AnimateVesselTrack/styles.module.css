@@ -1,0 +1,16 @@
+.animateControl {
+  background: #fff;
+  padding: 5px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 100000;
+  left: 10px;
+}
+
+.startAnimation {
+  top: 85px;
+}
+
+.stopAnimation {
+  top: 124px;
+}

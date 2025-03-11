@@ -11,11 +11,19 @@ select master branch
 Navigate to the root folder:
 
 ```
-yarn install
+pnpm install
 ```
 
 ```
-yarn start
+pnpm start
 ```
 
-browser listens to [http://localhost:3000](http://localhost:3000) as default port
+or
+
+```
+docker compose build --no-cache
+docker compose up
+```
+
+browser listens to [http://localhost:3003](http://localhost:3003) as default port
+. env file is included with the changed port
